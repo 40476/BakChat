@@ -1,0 +1,54 @@
+{
+  "time":{
+    "offset":-5
+  },
+  "server":{
+    "name":"bakchat.40476.repl.co",
+    "passcodes":{
+      "OWNER":".env",
+      "ADMIN":".env",
+      "MODr":".env",
+      "HELPr":".env",
+      "REMOTE":".env",
+      "salt":"",
+      "manAuthStartup":"false"
+    },
+    "startUpDelay":2000,
+    "manAuthStartup":"false",
+    "owner":"40476"
+  },
+  "accounts":{
+    "requireLogin":true
+  },
+  "rm_publicLogs_startup":true,
+  "showAdvancedConnectionData":false,
+  "consoleRefreshRate":1000,
+  "chat":{
+    "filter":true,
+    "commandprefix":"/",
+    "messagecap":[false,3,1000]
+  },
+  "ranks": {
+    "owner": {
+      "symbol": {"s":"{","e":"}"},
+      "rank":4
+    },
+    "admin":{
+      "symbol": {"s":"@","e":""},
+      "rank":3
+    },
+    "moderator":{
+      "symbol": {"s":"$","e":""},
+      "rank":2
+    },
+    "helper":{
+      "symbol": {"s":".","e":""},
+      "rank":1
+    },
+    "user":{
+      "symbol": {"s":"","e":""},
+      "rank":0
+    }
+  },
+  "SRV":[]
+}

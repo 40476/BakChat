@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pure CSS gauge vGAUGE_VERSION</title>
+    <meta name="description" content="Pure CSS gauge">
+    <meta name="author" content="Otto Salminen">
+    <link rel="stylesheet" href="gauge.min.css?v=GAUGE_VERSION">
+    <link rel="stylesheet" href="gauge-glossy.min.css?v=GAUGE_VERSION">
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #d8d8d8;
+        }
+
+        .gauge-example {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .gauge-example>div {
+            background-color: #ffffff;
+            width: 48%;
+            min-width: 350px;
+            margin: 5px;
+            text-align: center;
+            padding-top: 40px;
+            line-height: 25px;
+            font-size: 14px;
+        }
+
+        .gauge-example>.gauge-description {
+            padding: 3em;
+            text-align: left;
+        }
+
+        .gauge-example>.gauge-description pre {
+            font-size: 12px;
+        }
+
+        .gauge {
+            margin: auto;
+        }
+
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #c2c2c2;
+            text-align: center;
+            padding: 0.5em;
+            border-top: solid 1px #aeaeae;
+        }
+
+        footer a {
+            color: #0366d6;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gauge-example">
+        <div>
+            <h1>Core</h1>
+            <div id="demoGauge" class="gauge" style="
+                --gauge-value:0;
+                width:200px;
+                height:200px;">
+
+                <!-- Layout testing guides
+                <div class="guide">
+                    <div class="guide-x"></div>
+                    <div class="guide-y"></div>
+                </div>
+                -->
+
+                <div class="ticks">
+                    <div class="tithe" style="--gauge-tithe-tick:1;"></div>
+                    <div class="tithe" style="--gauge-tithe-tick:2;"></div>
+                    <div class="tithe" style="--gauge-tithe-tick:3;"></div>
+                    <div class="tithe" style="--gauge-tithe-tick:4;"></div>
+                    <div class="tithe" style="--gauge-tithe-tick:6;"></div>
+                    <div class="tithe" style="--gauge-tithe-tick:7;"></div>
+                    <div class="tithe" style="--gauge-tithe-tick:8;"></div>
+                    <div class="tithe" style="--gauge-tithe-tick:9;"></div>
+                    <div class="min"></div>
+                    <div class="mid"></div>
+                    <div class="max"></div>
+                </div>
+                <div class="tick-circle"></div>
+
+                <div class="needle">
+                    <div class="needle-head"></div>
+                </div>
+                <div class="labels">
+                    <div class="value-label"></div>
+                </div>
+            </div>
+            <p>
+                <label for="points">Value range 0-100</label><br />
+                <input type="range" id="gaugeValue-demoGauge" name="gaugeValue" min="0" max="100" value="0"
+                    onInput="updateGauge('demoGauge', 0, 100);" onChange="updateGauge('demoGauge', 0, 100);" />
+            </p>
+        </div>
+        <div class="gauge-glossy">
+            <h1>Themed</h1>
+
+            <!-- Demo gauge 2-->
+            <div id="demoGauge2" class="gauge" style="
+                --gauge-bg: #088478;
+                --gauge-value:0;
+                --gauge-display-value:50;
+                width:25vw;
+                height:25vw;">
+
+                <div class="ticks">
+                    <div class="tithe" style="--gauge-tithe-tick:1;"></div>
+                    <div class="tithe" style="--gauge-tithe-tick:2;"></div>
+                    <div class="tithe" style="--gauge-tithe-tick:3;"></div>
+                    <div class="tithe" style="--gauge-tithe-tick:4;"></div>
+                    <div class="tithe" style="--gauge-tithe-tick:6;"></div>
+                    <div class="tithe" style="--gauge-tithe-tick:7;"></div>
+                    <div class="tithe" style="--gauge-tithe-tick:8;"></div>
+                    <div class="tithe" style="--gauge-tithe-tick:9;"></div>
+                    <div class="min"></div>
+                    <div class="mid"></div>
+                    <div class="max"></div>
+                </div>
+                <div class="tick-circle"></div>
+
+                <div class="needle">
+                    <div class="needle-head"></div>
+                </div>
+                <div class="labels">
+                    <div class="value-label"></div>
+                </div>
+            </div>
+            <p>
+                <label for="points">Custom value range 50-150</label><br />
+                <input type="range" id="gaugeValue-demoGauge2" name="gaugeValue" min="50" max="150" value="50"
+                    onInput="updateGauge('demoGauge2', 50, 150);" onChange="updateGauge('demoGauge2', 50, 150);" />
+            </p>
+        </div>
+        <footer>
+            Pure CSS gauge vGAUGE_VERSION in <a href="https://github.com/rotvalli/css-gauge">Github</a>
+        </footer>
+        <script type="text/javascript">
+            //<![CDATA[
+            function updateGauge(id, min, max) {
+                const newGaugeDisplayValue = document.getElementById("gaugeValue-" + id).value;
+                const newGaugeValue = Math.floor(((newGaugeDisplayValue - min) / (max - min)) * 100);
+                document.getElementById(id).style.setProperty('--gauge-display-value', newGaugeDisplayValue);
+                document.getElementById(id).style.setProperty('--gauge-value', newGaugeValue);
+            }
+        //]]>
+        </script>
+</body>
+
+</html>

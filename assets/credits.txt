@@ -1,0 +1,11 @@
+Developers:
+  @Durrwin & @40476
+Testers:
+  SUBZERO
+  arsh
+  $aied
+Special Credits:
+  StackOverFlow
+  W3schools
+  Vandesm14 (original chat framework)
+  404 page by sarazond (codepen.io/sarazond/pen/jOKyjZ)

