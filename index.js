@@ -105,7 +105,6 @@ if(config.rm_publicLogs_startup){makeFolder('./public/chatlogs');delFolder('./pu
         let newname,selectedSocket,rooms;
         switch (message.split(' ')[0]){
 
-
           case config.chat.commandprefix+'login':try{eval(fs.readFileSync('./chatHANDLE/cmd/account/login.js','utf8'));}catch(e){logger.ERROR(e)};break;
           case config.chat.commandprefix+'newaccount':try{eval(fs.readFileSync('./chatHANDLE/cmd/account/new.js','utf8'));}catch(e){logger.ERROR(e)};break;
           case config.chat.commandprefix+'credits':socket.emit('message',{name:'server',message:`BakChat version `+version+'<br><pre>'+fs.readFileSync('assets/credits.txt')+'</pre>'});break;
