@@ -4,3 +4,4 @@ package-lock.json
 users/
 chatlogs/
 assets/dev/log.html
+.gitignore
