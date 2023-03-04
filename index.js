@@ -12,7 +12,7 @@ const logger={
 "FATAL":function(e,z){try{if(z!==1){fs.appendFileSync(`./assets/dev/log.html`,`<br><pre><b style="color:#ff0000;background-color:#000000;font-family:monospace;">`+"["+month+"-"+date+"-"+year+"*"+hours+"."+minutes+"."+seconds+"]"+`[FATAL]>>>`+e+`</pre></b>\n`)}}catch(e){};console.log('\x1b[31m'+e+'\x1b[0m');}
 }
 
-//joe mamamamamama
+/*joe mamamamamama*/
 try{
 const initTime=Date.now();
 const express=require('express'),/*make website duh*/
