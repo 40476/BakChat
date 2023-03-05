@@ -4,6 +4,7 @@
   },
   "server":{
     "name":"bakchat.40476.repl.co",
+    "port":8080,
     "passcodes":{
       "OWNER":".env",
       "ADMIN":".env",

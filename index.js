@@ -12,7 +12,6 @@ const logger={
 "FATAL":function(e,z){try{if(z!==1){fs.appendFileSync(`./assets/dev/log.html`,`<br><pre><b style="color:#ff0000;background-color:#000000;font-family:monospace;">`+"["+month+"-"+date+"-"+year+"*"+hours+"."+minutes+"."+seconds+"]"+`[FATAL]>>>`+e+`</pre></b>\n`)}}catch(e){};console.log('\x1b[31m'+e+'\x1b[0m');}
 }
 
-/*joe mamamamamama*/
 try{
 const initTime=Date.now();
 const express=require('express'),/*make website duh*/
@@ -22,7 +21,7 @@ const express=require('express'),/*make website duh*/
       http=require('http').Server(app),
       readline=require('readline').createInterface({input: process.stdin,output: process.stdout}),
       io=require('socket.io').listen(http),
-      device = require('express-device');
+      device=require('express-device');
 console.log(fs.readFileSync('./logo.txt','utf8'));
 /*self made plugins*/
 /* const logger = require('./plugins/,/logger.js');*/
@@ -34,18 +33,18 @@ const cookieParser=require('./plugins/cookie-parser');
 function SERV(){if(true){setTimeout(function(){;
 logger.trace(`server started, as PID:`+process.pid+` on `+process.platform)
 console.log(`BakChat version `+version+` -- as PID:`+process.pid+` on `+process.platform+`\n\n`+fs.readFileSync('assets/credits.txt','utf8')+`\n-------------------`);
-var recentHistory="",bar="",consoleLastRefresh,mtxsr;
+var recentHistory='',bar='',consoleLastRefresh,mtxsr;
 /*app.use*/eval(fs.readFileSync('./plugins/,/use.js','utf8'));
 /*request handlers*/eval(fs.readFileSync('./plugins/,/get.js','utf8'));
 
-http.listen(3000,()=>undefined);
+http.listen(config.server.port,()=>undefined);
 io.engine.generateId=(req)=>{return randHex(6);};
 /*load functions*/eval(fs.readFileSync('./plugins/,/functions.js','utf8'));
 /*fix directories???*/eval(fs.readFileSync('./plugins/,/folders.js','utf8'));
 /*define passcodes */eval(fs.readFileSync('./plugins/,/passcodes.js','utf8'));
 
 if(config.rm_publicLogs_startup){makeFolder('./public/chatlogs');delFolder('./public/chatlogs');setTimeout(function(){makeFolder('./public/chatlogs')},50);setTimeout(function(){makeFolder('./public/chatlogs')},100);}
-  setInterval(function(){console.clear();if((((Date.now()-consoleLastRefresh)-config.consoleRefreshRate)*-1)<0){mtxsr='\x1b[41m'}else{mtxsr='\x1b[42m'};bar="";for(let i=0;i<process.stdout.columns;i++){bar=bar+"-"};for (let i=0;i<linez(recentHistory);i++){if(linez(recentHistory)>(process.stdout.rows-3)){recentHistory=RemoveFirstLine(recentHistory)}}console.log(version+" - "+Date.now()+" -{"+mtxsr+(((Date.now()-consoleLastRefresh)-config.consoleRefreshRate)*-1)+"\x1b[0m & "+Math.trunc((Date.now()-initTime)/1000)+"}["+config.server.name+"]\n"+bar+recentHistory);consoleLastRefresh=Date.now();},config.consoleRefreshRate);
+  setInterval(function(){console.clear();if((((Date.now()-consoleLastRefresh)-config.consoleRefreshRate)*-1)<0){mtxsr='\x1b[41m'}else{mtxsr='\x1b[42m'};bar='';for(let i=0;i<process.stdout.columns;i++){bar=bar+'-'};for (let i=0;i<linez(recentHistory);i++){if(linez(recentHistory)>(process.stdout.rows-3)){recentHistory=RemoveFirstLine(recentHistory)}}console.log(version+' - '+Date.now()+' -{'+mtxsr+(((Date.now()-consoleLastRefresh)-config.consoleRefreshRate)*-1)+'\x1b[0m & '+Math.trunc((Date.now()-initTime)/1000)+'}['+config.server.name+':'+config.server.port+']\n'+bar+recentHistory);consoleLastRefresh=Date.now();},config.consoleRefreshRate);
 
   io.on('connection',(socket) =>{
   socket.on('join',(data) =>{
@@ -131,22 +130,7 @@ if(config.rm_publicLogs_startup){makeFolder('./public/chatlogs');delFolder('./pu
     }
     }
   );
-  socket.on('disconnect',(data) =>{
-    if (socket && socket.proto && socket.proto.room){
-      toRoom(socket.proto.room).emit('message',{
-        name: 'server',
-        message: `${socket.proto.name}(${socket.proto.id}) has left`
-      });
-      try{
-      var user=require('./users/'+fixname(socket.proto.name)+'.json');
-        user.isLogin='offline'
-      fs.writeFileSync('./users/'+fixname(socket.proto.name)+'.json',JSON.stringify(user));
-      }catch(e){}
-      recentHistory=recentHistory+"\n"+hours+":"+minutes+":"+seconds+" "+':  '+`${socket.proto.name}(${socket.proto.id}) has left ${socket.proto.room}`;
-      Tolog(socket.proto.room,'<b style="color:#00FF00">server(S)@</b>'+hours+":"+minutes+":"+seconds+" "+month+"-"+date+"-"+year+''+':'+`${socket.proto.name} has left`);
-      
-    }
-  });
+  socket.on('disconnect',(data)=>{try{if(socket&&socket.proto&&socket.proto.room){eval(fs.readFileSync('./chatHANDLE/onDisconnect.js','utf8'));}}catch(e){logger.ERROR(e);};});
 });
 },config.server.startUpDelay);
 }}
