@@ -1,0 +1,2 @@
+makeFolder('./users');
+makeFolder('./chatlogs');
