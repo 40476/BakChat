@@ -1,11 +1,11 @@
-{
+﻿{
   "name": "honeydewsilentjava",
   "version": "1.8.2",
   "description": "BakChat is a multipurpose & lightweight chat application written in nodeJS.\nBakChat has a very similar Ui and backbone compared to \"LowChat\", and then I deicded to make it better... AND LOOK AT IT NOW\nDONT FLAG ME FOR THE CUSSWORDS FILTER ON LINE 26",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm start"
+    "start": "node index.js"
   },
   "author": "40476",
   "license": "MIT",

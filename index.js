@@ -1,5 +1,8 @@
-const fs=require('fs');
-const config=JSON.parse(fs.readFileSync('./sconfig.json','utf8').replace(/\/\*[\!-\+a-zA-Z0-9-\s]+\*\//gm,'')),version=require('./package.json').version;
+﻿const fs=require('fs');
+// const config=JSON.parse(fs.readFileSync('./sconfig.json','utf8').replace(/\/\*[\!-\+a-zA-Z0-9-\s]+\*\//gm,''));
+fs.writeFileSync('.cnfg.json',fs.readFileSync('./sconfig.json','utf8').replace(/\/\*[\!-\+a-zA-Z0-9-\s]+\*\//gm,''))
+const config=require('./.cnfg.json');
+const version=require('./package.json').version;
 // regex used --> /\/\*[\!-\+a-zA-Z0-9-\s]+\*\//gm
 let date_ob=new Date();let date=date_ob.getDate();let month=date_ob.getMonth();let year=date_ob.getFullYear();let hours=date_ob.getHours()+config.time.offset;let minutes=date_ob.getMinutes();let seconds=date_ob.getSeconds();
 setInterval(function(){date_ob=new Date();date=date_ob.getUTCDate();month=date_ob.getUTCMonth();year=date_ob.getUTCFullYear();hours=(date_ob.getHours()+config.time.offset)%12;minutes=date_ob.getUTCMinutes();seconds=date_ob.getUTCSeconds();},750);
