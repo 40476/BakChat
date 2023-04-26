@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -7,7 +7,7 @@
     <style id="sheetControl">:root{--borderRad:0px;--backdrop:#ffffff;--backdropextender:#1f1f1f;}</style>
     <div id="themeSheet"></div>
     <link href="/../themes/css.css" rel="stylesheet" type="text/css">
-		<link rel="icon" href="/../images/fav.png" type="image/x-icon"id="icon">
+    <link rel="icon" href="/../images/fav.png" type="image/x-icon"id="icon">
   </head>
   <div id="loader">    <style>.lds-roller {display: inline-block;position: absolute;left:50%;top:50%;width: 80px;height: 80px;z-index:999999}.lds-roller div {animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;transform-origin: 40px 40px;}.lds-roller div:after {content: " ";display: block;position: absolute;width: 7px;height: 7px;border-radius: 50%;background-color: #00ff00;margin: -4px 0 0 -4px;}.lds-roller div:nth-child(1) {animation-delay: -0.036s;}.lds-roller div:nth-child(1):after {top: 63px;left: 63px;}.lds-roller div:nth-child(2) {animation-delay: -0.072s;}.lds-roller div:nth-child(2):after {top: 68px;left: 56px;}.lds-roller div:nth-child(3) {animation-delay: -0.108s;}.lds-roller div:nth-child(3):after {top: 71px;left: 48px;}.lds-roller div:nth-child(4) {animation-delay: -0.144s;}.lds-roller div:nth-child(4):after {top: 72px;left: 40px;}.lds-roller div:nth-child(5) {animation-delay: -0.18s;}.lds-roller div:nth-child(5):after {top: 71px;left: 32px;}.lds-roller div:nth-child(6) {animation-delay: -0.216s;}.lds-roller div:nth-child(6):after {top: 68px;left: 24px;}.lds-roller div:nth-child(7) {animation-delay: -0.252s;}.lds-roller div:nth-child(7):after {top: 63px;left: 17px;}.lds-roller div:nth-child(8) {animation-delay: -0.288s;}.lds-roller div:nth-child(8):after {top: 56px;left: 12px;}@keyframes lds-roller {0% {transform: rotate(0deg);}100% {transform: rotate(360deg);}}</style><div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>     </div>
   <body>
@@ -21,7 +21,7 @@
       rounded edges<input id="borderRadius_control"type="number"value="0"min="0"max="60"style="width:40px"><br>
       background color<input id="backdrop_colour"type="color"><br>
       <select id="invis"><option>true</option><option>false</option></select>
-		  <div>audio notifications<select id="audio">
+      <div>audio notifications<select id="audio">
         <option>ting.mp3</option>
         <option>whatsapp whistle.wav</option>
         <option>E.wav</option>
@@ -42,25 +42,25 @@
         <input placeholder="password"type="password"id="login_psk"><br>
       <button onclick="settings();">apply</button>
     </div>
-		<div class="app">
-			<div class="log"id="log">
-			</div>
-			<div class="box">
-				<div id="msg_wrapper"><p class="message" id="message" contenteditable="true"></p></div>
+    <div class="app">
+      <div class="log"id="log">
+      </div>
+      <div class="box">
+        <div id="msg_wrapper"><p class="message" id="message" contenteditable="true"></p></div>
       </div>
       <div style="position:absolute;height:100%;width:10%;left:90%;top:0%;"id="macro_box"></div>
     </div>
-		<template id="itemTemplate">
-			<div class="item {{type}} {{same}} load" id="{{id}}">
-				<p class="item-time">{{time}}</p>
+    <template id="itemTemplate">
+      <div class="item {{type}} {{same}} load" id="{{id}}">
+        <p class="item-time">{{time}}</p>
 <!--         <p class="item-platform">{{platform}}</p> -->
-				<p class="item-name"style="background-color:{{oppcolor}};"data-color="{{color}}"><a href="/../$/profile.html?user={{userlink}}"style="color:inherit;text-decoration:none;"target="_blank">{{name}}</a></p>
-				<p class="item-message">{{message}}</p>
-			</div>
-		</template>
+        <p class="item-name"style="background-color:{{oppcolor}};"data-color="{{color}}"><a href="/../$/profile.html?user={{userlink}}"style="color:inherit;text-decoration:none;"target="_blank"onhover="{{bruh}}">{{name}}</a></p>
+        <p class="item-message">{{message}}</p>
+      </div>
+    </template>
     <script src="/../assets/fixnames.js"></script>
-		<script src="socket.io/socket.io.js"></script>
-		<script>try{const invCLRcss=`html{-webkit-filter:invert(100%);-moz-filter:invert(100%);-o-filter:invert(100%);-ms-filter:invert(100%);}`;const invCLRstyle=document.createElement('style');invCLRstyle.type='text/css';if(invCLRstyle.styleSheet){invCLRstyle.styleSheet.cssText=invCLRcss;}else{invCLRstyle.appendChild(document.createTextNode(invCLRcss));}function invCLR(e){if(e){document.head.appendChild(invCLRstyle);}else{document.head.removeChild(invCLRstyle);}}}catch(e){alert(e)}</script>
+    <script src="socket.io/socket.io.js"></script>
+    <script>try{const invCLRcss=`html{-webkit-filter:invert(100%);-moz-filter:invert(100%);-o-filter:invert(100%);-ms-filter:invert(100%);}`;const invCLRstyle=document.createElement('style');invCLRstyle.type='text/css';if(invCLRstyle.styleSheet){invCLRstyle.styleSheet.cssText=invCLRcss;}else{invCLRstyle.appendChild(document.createTextNode(invCLRcss));}function invCLR(e){if(e){document.head.appendChild(invCLRstyle);}else{document.head.removeChild(invCLRstyle);}}}catch(e){alert(e)}</script>
     <script src="/../assets/query.js"></script>
     <script onload="setTimeout(function(){document.getElementById('loader').innerHTML=''},1000)"src="/../script.js"></script>
       </body>

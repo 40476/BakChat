@@ -1,7 +1,7 @@
 ﻿{
   /*I USED REGEX TO MAKE IT LET ME DO COMMENTS!!!*/
   "time": {
-    "offset": -5
+    "offset": 0
   },
   "server": {
     "name": "untitled-server",
@@ -17,14 +17,17 @@
     },
     "startUpDelay": 0 /*incase you have a prepare script or something and need a moment before starting*/,
     "manAuthStartup": "false",
-    "owner": "40476"
+    "owner": "40476",
+    "console":{
+      "consoleRefreshRate": 1000 /*decrease this if its glitching*/,
+      "uptime2HMS":false
+    }
   },
   "accounts": {
     "requireLogin": true
   },
   "rm_publicLogs_startup": true /*reset public logs on startup(keeps main logs)*/,
   "showAdvancedConnectionData": false /*AMONGUS*/,
-  "consoleRefreshRate": 1000 /*raise this if its glitching*/,
   "chat": {
     "filter": true /*cuss filter*/,
     "commandprefix": "/",

@@ -1,4 +1,4 @@
-const thisurl=new URL(document.location);if(thisurl.hash==='#e'){chatlog=[];localStorage.setItem('chatlog','{}');document.location=thisurl.pathname;}//reset if anyone breaks ur client
+﻿const thisurl=new URL(document.location);if(thisurl.hash==='#e'){chatlog=[];localStorage.setItem('chatlog','{}');document.location=thisurl.pathname;}//reset if anyone breaks ur client
 try{if(localStorage.getItem('chatlog').length>10000){localStorage.setItem('chatlog','')}}catch(e){}
 function notify(a,b,c){try{return new Notification(a,{b,c});}catch(e){alert(e)}}
 try{function settings(){
@@ -98,6 +98,10 @@ $(document).ready(function(){
       let title ='BakChat '+' | '+data.name;let icon = '/../images/fav.png';let body = data.message;var notification = new Notification(title, { body, icon });
 
    }
+ });
+  client.on('usr_JSON',function(data){
+    
+    // console.log(JSON.stringify(data))
  });
 
   $('#message').on('keydown',function(e){

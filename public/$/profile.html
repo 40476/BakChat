@@ -1,4 +1,4 @@
-<table style="width:100%;" border="1"onload=""><tbody><tr>
+﻿<table style="width:100%;" border="1"onload=""><tbody><tr>
   <td style="width:195px;"><img src=""id="profile_pic"width="195px"height="195px"></td>
   <td style="width: 33.3333%;"id="desc">e</td>
   <td style="width: 33.3333%;"id="stats">e</td>
@@ -12,8 +12,7 @@
   // document.getElementById('profile_pic').src=`/../profile.OUT?user=${e}&step=img`;
     fetch(`/../profile.OUT?user=${e}&step=stats`).then(response=>response.text()).then(data=>{document.getElementById('stats').innerHTML=data;});
     // fetch(`/../profile.OUT?user=${e}&step=desc`).then(response=>response.text()).then(data=>{document.getElementById('desc').innerHTML=data;});
-    // fetch(`/../profile.OUT?user=${e}&step=desc`).then(response=>response.text()).then(data=>{document.getElementById('desc').innerHTML=data;});
-    setTimeout(()=>{if(document.getElementById('isLogin').innerHTML==='online'){document.getElementById('isLogin').style='background-color:#00FF00'}else{document.getElementById('isLogin').style='background-color:#FF0000'}},1000);
+    setTimeout(()=>{if(document.getElementById('isLogin').innerHTML.includes('online')){document.getElementById('isLogin').style='background-color:#00FF00'}else{document.getElementById('isLogin').style='background-color:#FF0000'}},1000);
     
     fetch(`/../profile.OUT?user=${e}&step=desc`).then(response=>response.text()).then(data=>{document.getElementById('desc').innerHTML=data;});
     fetch(`/../profile.OUT?user=${e}&step=bio`).then(response=>response.text()).then(data=>{document.getElementById('bio').innerHTML=data;});

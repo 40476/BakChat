@@ -1,11 +1,11 @@
-try{
-var user=JSON.parse(fs.readFileSync('./users/'+fixname(message.split(' ')[1])+'.json','utf8'));
-if(user.psk/*+user.times[1]*/===hash(message.split(' ')[2],message.split(' ')[1])){
+﻿try{
+var user=JSON.parse(fs.readFileSync('./users/'+fixname(message.split(' ')[1])+'.json','utf8').replace('\ufeff',''));
+if(user.psk===hash(message.split(' ')[2],message.split(' ')[1])){
   var session=[Date.now(),Date.now()];
   user.times.push(session);
-  // user.cnt++;
+  user.rooms.push(room)
+  
   user.isLogin='online';
-  // if(user.times.length>20){delete user.times[1]}
   fs.writeFileSync('./users/'+fixname(message.split(' ')[1])+'.json',JSON.stringify(user));
   
   selectedSocket=query({
@@ -13,7 +13,7 @@ if(user.psk/*+user.times[1]*/===hash(message.split(' ')[2],message.split(' ')[1]
   room: room
 },true);
   selectedSocket=selectedSocket[Object.keys(selectedSocket)[0]];
-  // if(message.split(' ')[3]==='1'){selectedSocket.disconnect();}
+  if(message.split(' ')[3]==='1'){selectedSocket.disconnect();}
   
   Tolog(room,'<b style="color:#00FF00">server(S)@</b>'+hours+":"+minutes+":"+seconds+" "+month+'-'+date+'-'+year+''+':'+`${message.split(' ')[1]}(${socket.proto.id}) has logged in`);
   recentHistory=recentHistory+"\n"+hours+":"+minutes+":"+seconds+" "+':  '+`${message.split(' ')[1]}(${socket.proto.id}) has logged in`;
@@ -27,17 +27,13 @@ if(user.psk/*+user.times[1]*/===hash(message.split(' ')[2],message.split(' ')[1]
   }else if(user.rank===0){socket.proto.name=config.ranks.user.symbol.s+socket.proto.name+config.ranks.user.symbol.e;
   }
   toRoom(room).emit('message',{name:'server',message:`<b style="background-color:#000000;color:#FFFFFF">${socket.proto.name}</b>(${socket.proto.id})[<b>${socket.proto.rank}</b>] has logged in`});
-  
-  // socket.emit('message',{name:'server',message:'ඞ'});
 }else{
     socket.emit('message',{name:'server',message:`error: invalid password`});
   //for debugging purposes only!! -->  
-  socket.emit('message',{name:'server',message:`error: invalid password (${user.psk/*+user.times[1]*/===hash(message.split(' ')[2],message.split(' ')[1])})--> ${hash(message.split(' ')[2],message.split(' ')[1])} ${user.psk} `});
+  // socket.emit('message',{name:'server',message:`error: invalid password (${user.psk/*+user.times[1]*/===hash(message.split(' ')[2],message.split(' ')[1])})--> ${hash(message.split(' ')[2],message.split(' ')[1])} ${user.psk} `});
   }
 
-if(user.banned===true){
-  selectedSocket.disconnect();selectedSocket.disconnect();selectedSocket.disconnect();selectedSocket.disconnect();selectedSocket.disconnect();selectedSocket.disconnect();selectedSocket.disconnect();selectedSocket.disconnect();selectedSocket.disconnect();selectedSocket.disconnect();selectedSocket.disconnect();selectedSocket.disconnect();selectedSocket.disconnect();selectedSocket.disconnect();selectedSocket.disconnect();selectedSocket.disconnect();selectedSocket.disconnect();selectedSocket.disconnect();
-  }
+if(user.banned===true){selectedSocket.disconnect();selectedSocket.disconnect();selectedSocket.disconnect();selectedSocket.disconnect();}
 }catch(e){
   // logger.ERROR(e);
   socket.emit('message',{name:'server',message:`<pre>${e}</pre>`});

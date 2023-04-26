@@ -1,4 +1,4 @@
-function randHex(len){for(var color="",i=0;i<len;i++)color+="0123456789ABCDEF"[Math.floor(16*Math.random())];return color}
+﻿function randHex(len){for(var color="",i=0;i<len;i++)color+="0123456789ABCDEF"[Math.floor(16*Math.random())];return color}
 function copy(arr){return JSON.parse(JSON.stringify(arr))}
 function randInt(min,max){return Math.floor(Math.random()*(max-min+1))+min;}
 function occurences(arr){var prev,a=[],b=[];(arr=copy(arr)).sort();for(var i=0;i<arr.length;i++)arr[i]!==prev?(a.push(arr[i]),b.push(1)):b[b.length-1]++,prev=arr[i];return{a:a,b:b}}
@@ -12,6 +12,7 @@ function Tolog(room,data){
   fs.appendFileSync('./public/chatlogs/'+room+'.html',data+'<br>\n');
   fs.appendFileSync('./chatlogs/'+room+'.html',data+'<br>\n');
 }
+function scanArr(arr,match){for(var i=-1;i<arr.length;i++){if(arr[i]===match){console.log(i+' & '+match+' '+arr[i]);return i}}}
 function restart(){logger.FATAL('admin command trigger-> restart');process.on("exit",function(){require("child_process").spawn(process.argv.shift(),process.argv,{cwd:process.cwd(),detached : true,stdio: "inherit"});});process.exit();}
 function query(obj,and,db){let keys=Object.keys(obj),values=Object.values(obj),main={},ret={};db=db||io.of("/").sockets,defaults(db,!0);for(let i in keys)i>0&&and?Object.keys(main).filter((el=>db[el].proto[keys[i]]===values[i])).map((el=>ret[el]=db[el])):Object.keys(db).filter((el=>db[el].proto[keys[i]]===values[i])).map((el=>main[el]=db[el]));return and?ret:main}
 function linez(str){var str_arr=str.split('\n');var newline_length=str_arr.length;return newline_length;}
