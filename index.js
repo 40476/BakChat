@@ -1,4 +1,4 @@
-﻿const fs=require('fs');
+const fs=require('fs');
 // const config=JSON.parse(fs.readFileSync('./sconfig.json','utf8').replace(/\/\*[\!-\+a-zA-Z0-9-\s]+\*\//gm,''));
 fs.writeFileSync('.cnfg.json',fs.readFileSync('./sconfig.json','utf8').replace(/\/\*[\!-\+a-zA-Z0-9-\s]+\*\//gm,''))
 const config=require('./.cnfg.json');
