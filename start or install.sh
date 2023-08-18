@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "PLEASE CHECK AND UPDATE YOUR 'SCONFIG.JSON' IT MIGHT CONTAIN INCORRECT SETTINGS"
+npm install
+npm start
