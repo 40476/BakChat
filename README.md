@@ -3,8 +3,8 @@
 main readme ------> [README.md](./README/README.md)\
 code of conduct --> [CODE_OF_CONDUCT.md](./README/CODE_OF_CONDUCT.md)\
 license ------------> [LICENSE.md](./README/LICENSE.md)\
-# #THERE ARE A BAZILLION BROKEN OR UN-IMPLEMENTED FEATURES IN THIS PROGRAM IT WOULD BE GREATLY HELPFUL IF OSMEONE COULD FIX SOME
-# #I will put you in the credits
+## THERE ARE A BAZILLION BROKEN OR UN-IMPLEMENTED FEATURES IN THIS PROGRAM IT WOULD BE GREATLY HELPFUL IF OSMEONE COULD FIX SOME
+## I will put you in the credits
 
 <!-- * online/offline status -->
 * kick (needs to be server-side)
