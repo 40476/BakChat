@@ -1,2 +1,0 @@
-makeFolder('./users');
-makeFolder('./chatlogs');
