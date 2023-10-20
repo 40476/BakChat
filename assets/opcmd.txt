@@ -1,9 +1,0 @@
-/kick [user]<br>
-/op [user]<br>
-/deop [user]<br>
-/mute [user]<br>
-/unmute [user]<br>
-/ban [user]<br>
-/unban [user]<br>
-/post [user] [message]<br>
-rickroll /rr<br>
