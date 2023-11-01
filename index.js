@@ -137,7 +137,7 @@ if(config.rm_publicLogs_startup){makeFolder('./public/chatlogs');delFolder('./pu
           case config.chat.commandprefix+'deMod':try{eval(fs.readFileSync('./chatHANDLE/cmd/MODr/remove.js','utf8'));}catch(e){logger.ERROR(e);};break;
           case config.chat.commandprefix+'unmute':try{eval(fs.readFileSync('./chatHANDLE/cmd/required/unmute.js','utf8'));}catch(e){logger.ERROR(e);};break;
           case config.chat.commandprefix+'mute':try{eval(fs.readFileSync('./chatHANDLE/cmd/required/mute.js','utf8'));}catch(e){logger.ERROR(e);};break;
-          // case config.chat.commandprefix+'update':if(true){/* TODO: ADD ARGUMENT TO 'start or install.sh'*/logger.ERROR('not implemented');}else{}break;
+          // case config.chat.commandprefix+'update':if(true){/* TODO: ADD ARGUMENT TO 'start or update.sh'*/logger.ERROR('not implemented');}else{}break;
           case config.chat.commandprefix+'msg':try{if(!socket.proto.muted){eval(fs.readFileSync('./chatHANDLE/onSendPrivate.js','utf8'));}}catch(e){logger.ERROR(e);};break;
           case config.chat.commandprefix+'troll':try{eval(fs.readFileSync('./chatHANDLE/cmd/misc/troll.js','utf8'));}catch(e){logger.ERROR(e);}break;
           case config.chat.commandprefix+'key':try{eval(fs.readFileSync('./chatHANDLE/cmd/required/key.js','utf8'));}catch(e){logger.ERROR(e);};break;
