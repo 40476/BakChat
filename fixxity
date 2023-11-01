@@ -1,0 +1,15 @@
+﻿
+git init
+git config --global init.defaultBranch master
+
+git branch -m main master
+git fetch origin
+git branch -u origin/master master
+git remote set-head origin -a
+
+git add *
+git commit -m "commit"
+git branch -M master
+
+git remote add origin git@github.com:40476/BakChat.git
+git push -u origin master
