@@ -8,26 +8,24 @@ license ------------> [LICENSE.md](./README/LICENSE.md)\
 ## I will put you in the credits
 
 <!-- * online/offline status -->
-* kick (needs to be server-side)
-* ban/unban (needs to be server-side)
+```
+* kick (needs to be server-side)=======================================(HIGH PRIORITY)
+* ban/unban (needs to be server-side)----------------------------------(HIGH PRIORITY)
 * slience this weird goofy error when viwing profile info (see console while spamming reload)
-* profile editor (functality needed)
-* sitewide login system
-* better cross-server chatting (like minecraft<-->discord)
-* plugins
-* server management gui
-* account management gui
-* parental controls
-* setup wizard
-* tutorial
-* bots
-* better chat filter
-* user groups for companies and school districts
-* system for friending/unfriending people
-* see peoples friends on the profile page
-* favorite room on profile page
-* room creation dialog
-=======
-﻿main readme ------> [README.md](./README/README.md)
-code of conduct --> [CODE_OF_CONDUCT.md](./README/CODE_OF_CONDUCT.md)
-license ------------> [LICENSE.md](./README/LICENSE.md)
+* profile editor (functality needed)=====================(IN PROGRESS) (HIGH PRIORITY)
+* sitewide login system--------------------------------(IN PROGRESS) (MEDIUM PRIORITY)
+* better cross-server chatting (like minecraft<-->discord)==============(LOW PRIORITY)
+* plugins -----------------------------------------------------------(MEDIUM PRIORITY)
+* server management gui==============================================(MEDIUM PRIORITY)
+* account management gui---------------------------------------------(MEDIUM PRIORITY)
+* parental controls=====================================================(LOW PRIORITY)
+* setup wizard----------------------------------------------------------(LOW PRIORITY)
+* tutorial==============================================================(LOW PRIORITY)
+* bots------------------------------------------------------------------(LOW PRIORITY)
+* better chat filter====================================================(LOW PRIORITY)
+* user groups for companies and school districts-----------------------(HIGH PRIORITY)
+* system for friending/unfriending people===============================(LOW PRIORITY)
+* see peoples friends on the profile page-------------------------------(LOW PRIORITY)
+* favorite room on profile page=========================================(LOW PRIORITY)
+* room creation dialog-------------------------------------------------(HIGH PRIORITY)
+```
