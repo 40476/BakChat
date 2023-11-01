@@ -1,0 +1,15 @@
+﻿<div>
+  <input type="text" id="login_name" placeholder="username">
+  <input type="password" id="login_psk" placeholder="password">
+</div>
+
+
+
+
+<iframe id="submit_method"></iframe>
+
+
+<script>
+  document.getElementById('login_name').value=localStorage.getItem('login_name');
+  document.getElementById('login_psk').value=localStorage.getItem('login_psk');
+</script>

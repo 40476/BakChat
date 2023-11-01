@@ -1,0 +1,59 @@
+﻿{
+  /*I USED REGEX TO MAKE IT LET ME DO COMMENTS!!!*/
+  "time": {
+    "offset": 0
+  },
+  "server": {
+    "name": "untitled-server",
+    "port": 3001,
+    "passcodes": {
+      "OWNER": "" /*HEY CHANGE THESE!!!*/,
+      "ADMIN": "" /*HEY CHANGE THESE!!!*/,
+      "MODr": "" /*HEY CHANGE THESE!!!*/,
+      "HELPr": "" /*HEY CHANGE THESE!!!*/,
+      "REMOTE": "lbozo" /*HEY CHANGE THESE!!!*/,
+      "salt": "" /*HEY THIS IS BROKEN!!!*/,
+      "manAuthStartup": "false" /*set this to your desired startup password if needed*/
+    },
+    "startUpDelay": 0 /*incase you have a prepare script or something and need a moment before starting*/,
+    "manAuthStartup": "false",
+    "owner": "40476",
+    "console":{
+      "consoleRefreshRate": 1000 /*increase this if its glitbeing being goofy*/,
+      "uptime2HMS":false
+    }
+  },
+  "accounts": {
+    "requireLogin": true
+  },
+  "rm_publicLogs_startup": true /*reset public logs on startup(keeps main logs)*/,
+  "showAdvancedConnectionData": false /*AMONGUS*/,
+  "chat": {
+    "filter": true /*cuss filter*/,
+    "commandprefix": "/",
+    "messagecap": [false, 3, 1000] /*not implemented*/
+  },
+  "ranks": {
+    "owner": {
+      "symbol": { "s": "{", "e": "}" },
+      "rank": 4
+    },
+    "admin": {
+      "symbol": { "s": "@", "e": "" },
+      "rank": 3
+    },
+    "moderator": {
+      "symbol": { "s": "$", "e": "" },
+      "rank": 2
+    },
+    "helper": {
+      "symbol": { "s": ".", "e": "" },
+      "rank": 1
+    },
+    "user": {
+      "symbol": { "s": "", "e": "" },
+      "rank": 0
+    }
+  },
+  "SRV": []
+}

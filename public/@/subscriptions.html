@@ -1,0 +1,58 @@
+﻿<script>var sha256=function r(o){function f(r,o){return r>>>o|r<<32-o}for(var t,n,a=Math.pow,c=a(2,32),e="length",i="",h=[],u=8*o[e],v=r.h=r.h||[],l=r.k=r.k||[],s=l[e],g={},k=2;s<64;k++)if(!g[k]){for(t=0;t<313;t+=k)g[t]=k;v[s]=a(k,.5)*c|0,l[s++]=a(k,1/3)*c|0}for(o+="";o[e]%64-56;)o+="\0";for(t=0;t<o[e];t++){if((n=o.charCodeAt(t))>>8)return;h[t>>2]|=n<<(3-t)%4*8}for(h[h[e]]=u/c|0,h[h[e]]=u,n=0;n<h[e];){var d=h.slice(n,n+=16),p=v;for(v=v.slice(0,8),t=0;t<64;t++){var w=d[t-15],A=d[t-2],C=v[0],M=v[4],A=v[7]+(f(M,6)^f(M,11)^f(M,25))+(M&v[5]^~M&v[6])+l[t]+(d[t]=t<16?d[t]:d[t-16]+(f(w,7)^f(w,18)^w>>>3)+d[t-7]+(f(A,17)^f(A,19)^A>>>10)|0);(v=[A+((f(C,2)^f(C,13)^f(C,22))+(C&v[1]^C&v[2]^v[1]&v[2]))|0].concat(v))[4]=v[4]+A|0}for(t=0;t<8;t++)v[t]=v[t]+p[t]|0}for(t=0;t<8;t++)for(n=3;n+1;n--){var S=v[t]>>8*n&255;i+=(S<16?0:"")+S.toString(16)}return i};</script>
+<style>
+.short{
+width:4rem
+}
+
+
+</style>
+
+<div id="login">
+
+passkey:<input type="text" id="KEY">
+</div>
+
+
+<div>
+user:<input id="user" type="text"><br>
+amount per USD:<input id="amountper" type="number" value="0.11" onupdate="fill(document.getElementById('payamount'))"><br>
+subsripbtion payment in USD:<input type="number" id="payamount" value="5.00" onupdate="fill(this)"><br>
+time allowed:<input type="number" id="MM" class="short"><b>-</b><input type="number" id="DD" class="short"><b>-</b><input type="number" id="YYYY" class="short"><br>
+
+
+<button onclick="submit(this)">submit</button>
+</div>
+
+<iframe id="submit"></iframe>
+
+<script>
+var check=sha256(document.getElementById('MM').value+document.getElementById('DD').value+document.getElementById('YYYY').value+document.getElementById('payamount').value+document.getElementById('amountper').value+document.getElementById('user').value);
+function fill(e,d,g,r){
+e=e.value/document.getElementById('amountper').value;
+/*document.getElementById('timeallow').value=e;*/
+d=(e*60*60*24)*1000
+g=Date.now()+d;
+r=new Date(g).getFullYear()+'-'+(new Date(g).getMonth()+1)+'-'+new Date(g).getDate();
+document.getElementById('MM').value=new Date(g).getMonth()+1;
+document.getElementById('DD').value=new Date(g).getDate();
+document.getElementById('YYYY').value=new Date(g).getFullYear();
+
+var b=[e,d,g,r]
+console.log(b)
+
+return b
+}
+function submit(a,b,c){
+    if(check===sha256(document.getElementById('MM').value+document.getElementById('DD').value+document.getElementById('YYYY').value+document.getElementById('payamount').value+document.getElementById('amountper').value+document.getElementById('user').value)){
+        a.innerHTML='submit';a.innerHTML='submit';a.innerHTML='submit';a.innerHTML='submit';a.innerHTML='submit';a.innerHTML='submit';a.innerHTML='submit';a.innerHTML='submit';a.innerHTML='submit';a.innerHTML='submit';a.innerHTML='submit';
+        b=new Date(document.getElementById('YYYY').value+'-'+document.getElementById('MM').value+'-'+document.getElementById('DD').value)
+        document.getElementById('submit').src=`/../subscribe.IN?psk=${document.getElementById('KEY').value}&username=${document.getElementById('user').value}&time=${fill(document.getElementById('payamount'))[1]}`
+        alert(document.getElementById('submit').src)
+    }else{
+        a.innerHTML='confirm?';
+        check=sha256(document.getElementById('MM').value+document.getElementById('DD').value+document.getElementById('YYYY').value+document.getElementById('payamount').value+document.getElementById('amountper').value+document.getElementById('user').value);
+        fill(document.getElementById('payamount'));
+    }
+}
+
+</script>

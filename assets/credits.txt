@@ -1,0 +1,12 @@
+﻿Developers:
+  @Durrwin & @40476
+Testers:
+  SUBZERO
+  arsh
+  $aied
+Special Credits:
+  StackOverFlow
+  talyian (github) awesome ANSI color guide for nodeJS
+  W3schools
+  Vandesm14 (original chat framework)
+  404 page by sarazond (codepen.io/sarazond/pen/jOKyjZ)
