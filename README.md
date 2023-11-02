@@ -23,7 +23,7 @@ license ------------> [LICENSE.md](./README/LICENSE.md)\
 * tutorial==============================================================(LOW PRIORITY)
 * bots------------------------------------------------------------------(LOW PRIORITY)
 * better chat filter====================================================(LOW PRIORITY)
-* user groups for companies and school districts-----------------------(HIGH PRIORITY)
+* user groups for companies and school districts---------------------(MEDIUM PRIORITY)
 * system for friending/unfriending people===============================(LOW PRIORITY)
 * see peoples friends on the profile page-------------------------------(LOW PRIORITY)
 * favorite room on profile page=========================================(LOW PRIORITY)
