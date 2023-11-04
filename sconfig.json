@@ -7,11 +7,11 @@
     "name": "untitled-server",
     "port": 3001,
     "passcodes": {
-      "OWNER": "" /*HEY CHANGE THESE!!!*/,
-      "ADMIN": "" /*HEY CHANGE THESE!!!*/,
+      "OWNER":"" /*HEY CHANGE THESE!!!*/,
+      "ADMIN":"" /*HEY CHANGE THESE!!!*/,
       "MODr": "" /*HEY CHANGE THESE!!!*/,
-      "HELPr": "" /*HEY CHANGE THESE!!!*/,
-      "REMOTE": "lbozo" /*HEY CHANGE THESE!!!*/,
+      "HELPr":"" /*HEY CHANGE THESE!!!*/,
+      "REMOTE":"lbozo" /*HEY CHANGE THESE!!!*/,
       "salt": "" /*HEY THIS IS BROKEN!!!*/,
       "manAuthStartup": "false" /*set this to your desired startup password if needed*/
     },
@@ -19,7 +19,7 @@
     "manAuthStartup": "false",
     "owner": "40476",
     "console":{
-      "consoleRefreshRate": 1000 /*increase this if its glitbeing being goofy*/,
+      "consoleRefreshRate": 1000 /*increase this if its glitching or being goofy*/,
       "uptime2HMS":false
     }
   },
