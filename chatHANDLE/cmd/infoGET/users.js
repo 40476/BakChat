@@ -1,7 +1,7 @@
 ﻿toRoom(room).emit('loginquery',{
     name:'server',
     room:room,
-   message:'dothigns'
+   message:'dothings'
 });
 
 setTimeout(function(){socket.emit('message',{

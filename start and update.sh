@@ -3,7 +3,7 @@ echo "PLEASE CHECK AND UPDATE YOUR 'SCONFIG.JSON' IT MAY CONTAIN INCORRECT SETTI
 
 
 
-sleep 10
+sleep 5
 rm BAKCHAT.zip
 wait -n
 wget https://github.com/40476/BakChat/raw/main/BAKCHAT.zip
