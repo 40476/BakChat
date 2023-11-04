@@ -1,4 +1,4 @@
-function fixname(name){
+﻿function fixname(name){
   for(let i=0;i<20;i++){
   try{name=name.replace(config.ranks.owner.symbol.s,'');}catch(e){try{logger.ERROR(e)}catch(e){}}
   try{name=name.replace(config.ranks.owner.symbol.e,'');}catch(e){try{logger.ERROR(e)}catch(e){}}
@@ -15,4 +15,3 @@ function fixname(name){
   // console.log(name)
   return name;
 }
-try{fs.writeFileSync('./public/assets/fixnames.js',fs.readFileSync('./plugins/,/fixnames.js','utf8'))}catch(e){}

@@ -45,9 +45,10 @@ var recentHistory='',bar='',consoleLastRefresh,mtxsr,uptime,isOnline='\033[5m';
 
 http.listen(config.server.port,()=>undefined);
 io.engine.generateId=(req)=>{return randHex(6);};
+/*make public files */eval(fs.readFileSync('./plugins/,/writefiles.js','utf8'));
 /*load functions*/eval(fs.readFileSync('./plugins/,/functions.js','utf8'));
 /*fix directories???*/eval(fs.readFileSync('./plugins/,/folders.js','utf8'));
-/*define passcodes */eval(fs.readFileSync('./plugins/,/passcodes.js','utf8'));
+/*define passcodes*/eval(fs.readFileSync('./plugins/,/passcodes.js','utf8'));
 
 if(config.rm_publicLogs_startup){makeFolder('./public/chatlogs');delFolder('./public/chatlogs');setTimeout(function(){makeFolder('./public/chatlogs')},50);setTimeout(function(){makeFolder('./public/chatlogs')},100);}
   eval(fs.readFileSync('./plugins/,/topbar.js','utf8'))

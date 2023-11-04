@@ -28,7 +28,7 @@ try{function settings(){
   
   
 var today=new Date().getHours();
-// if((document.location.host==='bakchatfork.glitch.me')&&(([0,6].indexOf(new Date().getDay()) != -1)||(!(today >= 7 && today <= 14)))){document.location="https://bakchat.40476.repl.co"}else{console.log(((document.location.host==='bakchatfork.glitch.me')&&(([0,6].indexOf(new Date().getDay()) != -1)||(today >= 7 && today <= 19))))}
+
 function fileExists(url){
   if(url){
     var req=new XMLHttpRequest();
@@ -56,17 +56,7 @@ var client=io(),__exec=false,chathistory=[],index=0,chatlog={},lasttime=new Date
 function updateConfig(){}
 var lastuser='';
 var __RULES__="No solicitation -- No personal attacks or harassment -- No spamming";
-var ads=[
-  ['betties pages','https://www.bettiespages.com/',
-    'https://images.squarespace-cdn.com/content/v1/5d2532eaaf9da50001010985/55cc099a-6375-41b4-8724-5c41ebf20d02/Betties_Pages-Logo.jpg?format=1500w',true],
-  ['consider checking the Better Place farms farmstand!','https://betterplacefarm.com/',
-    'https://betterplacefarm.com/wp-content/uploads//2020/04/logo-better-place-farm-FIXED.svg',true],
-  // ['consider donating!','',
-  //   '',true],
 
-
-
-];
 function randAd(){var adCheck=randInt(0,ads.length-1);return `<br><a href="`+ads[adCheck][1]+`">`+`<img width="200px"height="200px"src="`+ads[adCheck][2]+`"`+`></a>`}
 /*opens the settings nav*/function openNav(){document.getElementById("mySidenav").style.width="250px",document.getElementById("main").style.marginLeft="250px"}function closeNav(){document.getElementById("mySidenav").style.width="0",document.getElementById("main").style.marginLeft="0"}
 // /*opens the normal nav*/function openNav2(){document.getElementById("nav2").style.width="250px",document.getElementById("main").style.marginLeft="250px"}function closeNav(){document.getElementById("nav2").style.width="0",document.getElementById("main").style.marginLeft="0"}

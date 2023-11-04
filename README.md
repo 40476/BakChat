@@ -11,11 +11,11 @@ license ------------> [LICENSE.md](./README/LICENSE.md)\
 ```
 * kick (needs to be server-side)=======================================(HIGH PRIORITY)
 * ban/unban (needs to be server-side)----------------------------------(HIGH PRIORITY)
-* slience this weird goofy error when viewing profile info (see console while spamming reload)
+* slience this weird goofy error when viewing profile info (see console in server while spamming reload)
 * profile editor (functality needed)=====================(IN PROGRESS) (HIGH PRIORITY)
 * sitewide login system--------------------------------(IN PROGRESS) (MEDIUM PRIORITY)
 * better cross-server chatting (like minecraft<-->discord)==============(LOW PRIORITY)
-* plugins -----------------------------------------------------------(MEDIUM PRIORITY)
+* plugins------------------------------------------------------------(MEDIUM PRIORITY)
 * server management gui==============================================(MEDIUM PRIORITY)
 * account management gui---------------------------------------------(MEDIUM PRIORITY)
 * parental controls=====================================================(LOW PRIORITY)
