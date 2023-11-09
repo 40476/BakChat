@@ -21,7 +21,8 @@
       rounded edges<input id="borderRadius_control"type="number"value="0"min="0"max="60"style="width:40px"><br>
       background color<input id="backdrop_colour"type="color"><br>
       <select id="invis"><option>true</option><option>false</option></select>
-      <div>audio notifications<select id="audio">
+      <div>
+      audio notifications<select id="audio">
         <option>ting.mp3</option>
         <option>whatsapp whistle.wav</option>
         <option>E.wav</option>
@@ -42,6 +43,19 @@
         <input placeholder="password"type="password"id="login_psk"><br>
       <button onclick="settings();">apply</button>
     </div>
+    
+    
+    
+    
+    <!--<div id="nav2" class="sidenav2">
+          <button class="closebtn" onclick="closeNav('nav2')">&times;</button><br>
+fdgdfwdsfaswetgrahtujgrygstdhfrc
+    </div>-->
+    
+    
+    
+    
+    
     <div class="app">
       <div class="log"id="log">
       </div>
@@ -54,11 +68,12 @@
       <div class="item {{type}} {{same}} load" id="{{id}}">
         <p class="item-time">{{time}}</p>
 <!--         <p class="item-platform">{{platform}}</p> -->
-        <p class="item-name"style="background-color:{{oppcolor}};"data-color="{{color}}"><a href="/../$/profile.html?user={{userlink}}"style="color:inherit;text-decoration:none;"target="_blank"onhover="{{bruh}}">{{name}}</a></p>
+        <p class="item-name"style="background-color:{{oppcolor}};"data-color="{{color}}"><a href="/../u/?user={{userlink}}"style="color:inherit;text-decoration:none;"target="_blank"onhover="{{bruh}}">{{name}}</a></p>
         <p class="item-message">{{message}}</p>
       </div>
     </template>
     <script src="/../assets/fixnames.js"></script>
+    <script src="/../assets/ads.js"></script>
     <script src="socket.io/socket.io.js"></script>
     <script>try{const invCLRcss=`html{-webkit-filter:invert(100%);-moz-filter:invert(100%);-o-filter:invert(100%);-ms-filter:invert(100%);}`;const invCLRstyle=document.createElement('style');invCLRstyle.type='text/css';if(invCLRstyle.styleSheet){invCLRstyle.styleSheet.cssText=invCLRcss;}else{invCLRstyle.appendChild(document.createTextNode(invCLRcss));}function invCLR(e){if(e){document.head.appendChild(invCLRstyle);}else{document.head.removeChild(invCLRstyle);}}}catch(e){alert(e)}</script>
     <script src="/../assets/query.js"></script>
