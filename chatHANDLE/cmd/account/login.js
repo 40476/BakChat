@@ -1,9 +1,6 @@
 ﻿try{
 var user=JSON.parse(fs.readFileSync('./users/'+fixname(message.split(' ')[1])+'.json','utf8').replace('\ufeff',''));
 if((user.psk===hash(message.split(' ')[2],message.split(' ')[1]))&&(user.control.accntEnabled===true)&&user.banned===false){
-  var session=[Date.now(),Date.now()];
-  user.times.push(session);
-  try{user.rooms.push(room)}catch(e){logger.ERROR(e);}
   
   user.isLogin='online';
   fs.writeFileSync('./users/'+fixname(message.split(' ')[1])+'.json',JSON.stringify(user));
@@ -29,6 +26,8 @@ if((user.psk===hash(message.split(' ')[2],message.split(' ')[1]))&&(user.control
     if(user.banned===false){toRoom(room).emit('message',{name:'server',message:`<b style="background-color:#000000;color:#FFFFFF">${socket.proto.name}</b>(${socket.proto.id})[<b>${socket.proto.rank}</b>] has logged in`});}
     Tolog(room,'<b style="color:#00FF00">server(S)@</b>'+hours+":"+minutes+":"+seconds+" "+month+'-'+date+'-'+year+''+':'+`${message.split(' ')[1]}(${socket.proto.id}) has logged in`);
     recentHistory=recentHistory+"\n"+hours+":"+minutes+":"+seconds+" "+':  '+`${message.split(' ')[1]}(${socket.proto.id}) has logged in`;
+    user.times.push([Date.now(),Date.now()]);
+    try{user.rooms.push(room)}catch(e){logger.ERROR(e);}
   }
 }else if(user.banned===false){
     socket.emit('message',{name:'server',message:`error: invalid password`});
