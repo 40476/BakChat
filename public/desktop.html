@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>initalizing...</title>
-    <style id="sheetControl">:root{--borderRad:0px;--backdrop:#ffffff;--backdropextender:#1f1f1f;}</style>
+    <style id="sheetControl">:root{--borderRad:0px;}</style>
     <div id="themeSheet"></div>
     <link href="/../themes/css.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="/../images/fav.png" type="image/x-icon"id="icon">
@@ -19,7 +19,7 @@
       <button onclick="Notification.requestPermission().then(function (permission) { console.log(permission); });">enable notificaions</button><br>
       inverted colors: <input type="checkbox"id="invert_clr"onchange="invCLR(document.getElementById('invert_clr').checked)"><br>
       rounded edges<input id="borderRadius_control"type="number"value="0"min="0"max="60"style="width:40px"><br>
-      background color<input id="backdrop_colour"type="color"><br>
+<!--       background color<input id="backdrop_colour"type="color"><br> -->
       <select id="invis"><option>true</option><option>false</option></select>
       <div>
       audio notifications<select id="audio">

@@ -1,5 +1,24 @@
 ﻿/* @import "https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700"; */
 
+@media (prefers-color-scheme: light) {
+    :root{
+      --draftTextColor:rgb(0,0,0);
+      --backdrop:rgb(255,255,255);
+      --backdropextender:rgb(200,200,200);
+      
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root{
+      --draftTextColor:rgb(255,255,255);
+      --backdrop:rgb(0,0,0);
+      --backdropextender:rgb(31,31,31);
+      
+    }
+}
+
+
 html,body,.site,.app {
 margin:0;
 padding:0;
@@ -45,8 +64,8 @@ overflow-wrap:break-word;
 margin:6px auto;
 padding:10px;
 width:94%;
-  color:white;
-background-color:#000;
+color:var(--draftTextColor);
+background-color:var(--backdrop);
 border-radius:var(--borderRad)
 }
 

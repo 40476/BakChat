@@ -5,13 +5,13 @@ function notify(a,b,c){try{return new Notification(a,{b,c});}catch(e){console.tr
 try{function settings(){
   
   document.documentElement.style.setProperty("--borderRad",document.getElementById('borderRadius_control').value+'px');
-  document.documentElement.style.setProperty("--backdrop",document.getElementById('backdrop_colour').value);
-  try{if(document.getElementById('invis').value==="true"){document.documentElement.style.setProperty("--backdrop",''+document.getElementById('backdrop_colour').value);document.documentElement.style.setProperty("--backdropextender",'#1f1f1f');}else{document.documentElement.style.setProperty("--backdrop",'none');document.documentElement.style.setProperty("--backdropextender",'none');}}catch(e){alert(e)}
+  // document.documentElement.style.setProperty("--backdrop",document.getElementById('backdrop_colour').value);
+  try{if(document.getElementById('invis').value==="true"){}else{document.documentElement.style.setProperty("--backdrop",'none');document.documentElement.style.setProperty("--backdropextender",'none');}}catch(e){alert(e)}
   pingSound=new Audio('/../assets/audio/'+document.getElementById('audio').value);
   localStorage.setItem('login_name',document.getElementById('login_name').value);
   localStorage.setItem('login_psk',document.getElementById('login_psk').value);
   localStorage.setItem('border_radius',document.getElementById('borderRadius_control').value);
-  localStorage.setItem('background_color',document.getElementById('backdrop_colour').value);
+  // localStorage.setItem('background_color',document.getElementById('backdrop_colour').value);
   
   document.getElementById('themeSheet').innerHTML='<style>'+document.getElementById('themeSelect').value+'</style>';
   
@@ -19,7 +19,7 @@ try{function settings(){
   // setTimeout(() =>{
   
   document.getElementById('borderRadius_control').value=localStorage.getItem('border_radius');
-  document.getElementById('backdrop_colour').value=localStorage.getItem('background_color');
+  // document.getElementById('backdrop_colour').value=localStorage.getItem('background_color');
   document.getElementById('login_name').value=localStorage.getItem('login_name');
   document.getElementById('login_psk').value=localStorage.getItem('login_psk');
   settings();
@@ -262,4 +262,4 @@ setTimeout(() =>{client.emit('message',{message:'/login '+document.getElementByI
 
 document.getElementById("advert").innerHTML=randAd();
 var modal=document.getElementById("myModal");var btn=document.getElementById("myBtn");var span=document.getElementsByClassName("close")[0];modal.style.display="block";span.onclick=function(){modal.style.display="none";};window.onclick=function(event){if(event.target==modal){modal.style.display="none";}}
-}catch(e){console.trace(e)}
+}catch(e){console.error(e)}
